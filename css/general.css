@@ -1,12 +1,12 @@
-/* 
---- 01 TUPOGRAPHY SYSTEM
+/*
+--- 01 TYPOGRAPHY SYSTEM
 
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
 - Font weights
 Default: 400
-MediumL: 500
+Medium: 500
 Semi-bold: 600
 Bold: 700
 
@@ -16,20 +16,27 @@ Small: 1.05
 Medium: 1.2
 Paragraph default: 1.6
 
--Letter spacing
+- Letter spacing
 -0.5px
 0.75px
 
 --- 02 COLORS
 
 - Primary: #e67e22
-- Tints: 
+- Tints:
 #fdf2e9
 #fae5d3
+#eb984e
 
-- Shades: #cf711f
+- Shades: 
+#cf711f
+#45260a
+
 - Accents:
 - Greys
+
+#888
+#767676 (lightest grey allowed on #fff)
 #6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
@@ -45,19 +52,20 @@ Medium: 11px
 
 --- 07 WHITESPACE
 
-- Spaceing system (px)
+- Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
 */
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 html {
   /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
 }
 
@@ -68,11 +76,12 @@ body {
   color: #555;
 }
 
-/* ****************************** */
-/* GENERAL REUSABLE COMPONENTS */
-/* ****************************** */
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
 
 .container {
+  /* 1140px */
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -80,9 +89,15 @@ body {
 
 .grid {
   display: grid;
-  row-gap: 9.6rem;
   column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
 }
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
 
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
@@ -100,6 +115,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .grid--center-v {
   align-items: center;
 }
@@ -109,6 +128,8 @@ body {
 .heading-tertiary {
   font-weight: 700;
   color: #333;
+  /* color: #45260a; */
+  /* color: #343a40; */
   letter-spacing: -0.5px;
 }
 
@@ -130,7 +151,7 @@ body {
   margin-bottom: 3.2rem;
 }
 
-.subheating {
+.subheading {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
@@ -145,12 +166,13 @@ body {
 .btn:visited {
   display: inline-block;
 
+  text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
-  text-decoration: none;
 
+  /* Only necessary for .btn */
   border: none;
   cursor: pointer;
   font-family: inherit;
@@ -190,12 +212,12 @@ body {
 .btn--form {
   background-color: #45260a;
   color: #fdf2e9;
-  padding: 1.2rem;
   align-self: end;
+  padding: 1.2rem;
 }
 
 .btn--form:hover {
-  background: #fff;
+  background-color: #fff;
   color: #555;
 }
 
@@ -211,10 +233,9 @@ body {
 
 .link:hover,
 .link:active {
-  color: #e67e22;
+  color: #cf711f;
   border-bottom: 1px solid transparent;
 }
-
 
 .list {
   list-style: none;
@@ -238,16 +259,17 @@ body {
 
 *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.8rem rgba(230, 126, 34, 0.5);
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
-/* HELPER/SETTIMGS CLASSES */
-
-.margin--right-sm {
+/* HELPER/SETTINGS CLASSES */
+.margin-right-sm {
   margin-right: 1.6rem !important;
 }
 
-.margin-botoom-md {
+.margin-bottom-md {
   margin-bottom: 4.8rem !important;
 }
 
